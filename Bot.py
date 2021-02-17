@@ -43,7 +43,9 @@ def get_time(message):
             time = message.text
             time_integer = int(time)
             time = time_integer
+            bot.send_message(message.from_user.id, f"Bomber started.\nTarget: {number}, Time: {time} second")
             main()
+            bot.send_message(message.from_user.id, f"Bomber complete.\n{number} nomeri {time} sekund yayradi")
         else:
             bot.send_message(message.from_user.id, 'Bomber cancelled. Type /bomber or /help')
     except:
